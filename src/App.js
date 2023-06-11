@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import './App.css';
 
-
 const Header = () => {
   return (
     <div className="ui fixed menu">
@@ -13,8 +12,6 @@ const Header = () => {
     </div>
   );
   };
-
-
 
 const ContactCard = (props) => {
   const { contact } = props;
@@ -45,48 +42,22 @@ const ContactCard = (props) => {
       <div className="user-icon">
         <i className="fa-solid fa-user-large"></i>
       </div>
-      <div className="content">
-        <div onClick={showContactDetails}>{name}</div>
-        <div onClick={showContactDetails}>{number}</div>
-        <div onClick={showContactDetails}>{email}</div>
+      <div className="content-card">
+        <div onClick={showContactDetails} className='name'>{name}</div>
+        <div onClick={showContactDetails} className='number'>{number}</div>
+        <div onClick={showContactDetails} className='email'>{email}</div>
       </div>
-      <div className="user-edit-icon" onClick={editContact}>
-        <div>
+      <div  onClick={editContact}>
+      <div className="user-edit-icon">
           <i className="fa-solid fa-pen"></i>
         </div>
       </div>
-      <div className="user-delete-icon" onClick={deleteContact}>
+      <div  className="user-minus-icon" onClick={deleteContact}>
         <i className="fa-solid fa-user-minus"></i>
       </div>
     </div>
   );
 };
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 const ContactList = (props) => {
   const [searchTerm, setSearchTerm] = useState('');
@@ -248,7 +219,7 @@ const AddContacts = (props) => {
         <button className="ui-button-Add">
           {props.contactToEdit ? 'Update' : 'Add'}
         </button>
-        <button className="ui button blue" onClick={goBack}>
+        <button className="back-btn" onClick={goBack}>
           Back
         </button>
       </form>
@@ -267,8 +238,6 @@ const ContactDetails = (props) => {
     props.editContact(contact.id);
   };
 
-  
-
   if (!contact) {
     return null;
   }
@@ -276,28 +245,29 @@ const ContactDetails = (props) => {
   const { name, number, email } = contact;
 
   return (
-    <div className="ui main">
-      <h2>Contact Details</h2>
-      <div className="user-icon-details">
+    <div className="main-contact-details">
+      <h2 className="header-d">Contact Details</h2>
+      <div className="card-contact-details">
+      
+      <div className="user-img">
         <i className="fa-solid fa-user-large"></i>
       </div>
-      <div className="content">
-        <h3>Name: {name}</h3>
-        <p>Number: {number}</p>
-        <p>Email: {email}</p>
-        <button className="ui button blue" onClick={goBack}>
+      <div className="contents-d">
+        <div className="description-name">Name: {name}</div>
+        <div className="description">Number: {number}</div>
+        <div className="description">Email: {email}</div>
+        <button className="back-btn-d" onClick={goBack}>
           Back
         </button>
-        <button className="ui button blue" onClick={editContact}>
+        <button className="back-btn-d" onClick={editContact}>
           Edit
         </button>
         
-        
+        </div>
       </div>
     </div>
   );
 };
-
 
 const App = () => {
   const [contacts, setContacts] = useState([]);
@@ -362,9 +332,9 @@ const App = () => {
   };
 
   return (
-    <div className="ui-container">
+    <div className="js-files-in-app.js">
       <Header />
-      <div className="ui-container-body">
+      
         {showAddContact ? (
           <AddContacts
             addContactHandler={addContactHandler}
@@ -389,7 +359,7 @@ const App = () => {
           />
         )}
       </div>
-    </div>
+    
   );
 };
 
