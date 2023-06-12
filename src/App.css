@@ -188,46 +188,34 @@ body::before {
 }
 
 .add-button {
-  margin: auto;
-  align-items: center;
-  text-align: center;
-  width: 5rem;
-  height: 2rem;
-  border-radius: 6px;
-  border: 4px solid whitesmoke;
-  font-weight: 400;
-  font-size: 1.5rem;
-  word-spacing: 2px;
-  animation-name: shimmer;   
-  animation-iteration-count: infinite;
-  position: relative;
-  background-clip: text;
-  -webkit-background-clip: text; 
-text-shadow: 2px 8px 5px black ; 
-top: -4rem;
-  left: 18rem;
-  right: -6px;
-  bottom: -6px;
-}
-.add-button::before {
-  content: "";
-  position: absolute;
-  top: 10px;
-  left: -6px;
-  right: -6px;
-  bottom: -6px;
-  border-radius: 12px;
-  
+  padding: 10px 20px;
+  border: none;
+  border-radius: 0;
+  cursor: pointer;
+  font-weight: bold;
+  background: linear-gradient(to right, rgb(116, 8, 80), crimson);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-size: 1.5rem;  
+  font-style: italic;
+  font-weight: 1200;
+  outline: none;
+  margin-left:-93%;
+  margin-top: 1rem;
 }
 
-.add-button span {
-  position: relative;
-  z-index: 10;
-}
 
 .add-button:hover {
-  background-color:  rgb(182, 5, 73);
-  opacity: 0.6;
+  
+  opacity: 0.7;
+}
+
+.add-button:focus {
+  outline: none;
+}
+
+.add-button:active {
+  transform: translateY(1px);
 }
 
 .Heading-Contact-List {
@@ -285,29 +273,6 @@ top: -4rem;
   right: 10px;
   color: #3b3636;
   cursor: pointer;
-}
-
-.add-button {
-  padding: 10px 20px;
-  background-color:  rgb(182, 5, 73);
-  color:  rgb(182, 5, 73);
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-  font-weight: bold;
-}
-
-.add-button:hover {
-  background-color:  rgb(182, 5, 73);
-  opacity: 0.7;
-}
-
-.add-button:focus {
-  outline: none;
-}
-
-.add-button:active {
-  transform: translateY(1px);
 }
 
 .contact-list .item {
@@ -502,24 +467,26 @@ top: -4rem;
 
 /* Media queries for mobile devices */
 
-@media (max-width: 550px) {
+@media (max-width: 500px) {
 
   body {
-    padding-top: 5rem;
+    
     background-position: left;
   }
 
   .Heading-Contact-Manager h2 {
     font-size: 2rem;
+    padding-top: -22rem;
   }
 
   .AddContact-Heading {
     font-size: 1.5rem;
+    margin-top: -4rem;
   }
 
   .ui.main {
-    width: 18rem;
-    height: 38rem;
+    width: 80%;
+    height: 100%;
   }
 
   .ui-button-Add,
@@ -534,43 +501,57 @@ top: -4rem;
   }
 
   .search-bar {
-    margin-bottom: 150px;
+    margin-bottom: -6.5%;
+    margin-top: 3rem;
+    margin-left: 10%;
+    
+    
+    
   }
 
   .prompt {
-    width: 22rem;
+    width: 18rem;
+    margin-left: -18%;
+    margin-top: -8rem;
+    
   }
 
   .add-button {
-    font-size: 1.2rem;
-    top: -3rem;
-    left: 15rem;
-  }
+    font-size: 1.8rem;
+    margin-top: -1rem;
+    margin-left: -100%;
+
+  } 
+  
+  
 
   .item {
     margin-bottom: 1.5rem;
+    margin-left:-8rem ;
   }
 
   .user-icon {
-    font-size: 4rem;
+    font-size: 5rem;
+    margin-left: 20%;
   }
 
   .content-card {
-    font-size: 1.1rem;
+    font-size: 0.9rem;
     margin-left: 1rem;
   }
 
   .user-edit-icon {
     font-size: 1.3rem;
-    margin-left: 4rem;
+    margin-left: 230%;
   }
 
   .user-minus-icon {
     font-size: 1.3rem;
+    margin-left: 15%;
   }
 
   .main-contact-details {
-    margin-top: -1px;
+    margin-top: -1rem;
   }
 
   .header-d {
@@ -578,15 +559,15 @@ top: -4rem;
   }
 
   .user-img {
-    font-size: 9rem;
-    margin-left: -8rem;
-    margin-top: -8rem;
+    font-size: 6rem;
+    margin-left: -6%;
+    margin-top: -6rem;
   }
 
   .description-name {
     font-size: 1.8rem;
     margin-left: 1.5rem;
-    margin-top: 2rem;
+    margin-top: 3rem;
   }
 
   .description {

@@ -116,9 +116,10 @@ const ContactList = (props) => {
       </div>
 
       {!props.showAddContact && (
-        <button className="add-button" onClick={props.toggleAddContact}>
-          Add
-        </button>
+        <div className="add-button">
+        
+        <i class="fa-solid fa-user-plus"  onClick={props.toggleAddContact}></i>
+        </div>
       )}
 
       <div className="Heading-Contact-List">
